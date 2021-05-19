@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Task</title>
+</head>
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    .wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 10%;
+        height: 100%;
+    }
+    .input {
+        border: 2px solid red;
+        padding: 5px;
+        width: 30%;
+        height: 30px;
+        box-sizing: border-box;
+    }
+    .btn{
+        background-color: green ;
+        width: 10%;
+        height: 30px;
+        color: white;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    #idName {
+        background-color: bisque;
+
+    }
+</style>
+<body>
+    <div class="wrap">
+        <input type="text" value="assasas" class="input" id="input">
+        <button class="btn" id="btn">Найти</button>
+    </div>
+
+
+
+<script>
+    let btn = document.getElementById('btn');
+    let input = document.getElementById('input');
+    let arrayPeople = [{name:'Masha', age:22 },{name:'Dima', age: 24},{name:'Tahja', age:34 },{name:'Petja', age: 36 }];
+    let arrayNumbers = [2,4,9,6,7,4,52,233,113,7,9,8,54,2,226,98,6,4,9,86];
+    const numbers = [4, 5,66,89,452,784,345,15,546,54,458,121,15483954,359,2659,44652,45];
+
+
+    btn.addEventListener('click', onBtnClick);
+
+    function onBtnClick() {
+        if (input.value === 'google') {
+            window.alert('Yandex круче. Но это не точно');
+        } else {
+            window.alert(input.value);
+        }
+        window.alert(arrayPeople[0].name);
+        window.alert(findMax([4,6,5,4,3,44,42,2,33,22,87,76,5,434,23,112,436],3000 ));
+    };
+
+    function superSum (a,b) {
+        window.alert(a+b)
+    };
+
+    superSum(6,3);
+
+    let max = arrayNumbers[0];
+    let min = arrayNumbers[0];
+    let i;
+    for (i=0; i < arrayNumbers.length; i++) {
+        if (max < arrayNumbers[i]) max = arrayNumbers[i];
+    }
+    for (i=0; i < arrayNumbers.length; i++) {
+        if (min > arrayNumbers[i]) min = arrayNumbers[i];
+    }
+    console.log('max is:' + max + '; min is: ' + min);
+
+    let a = 'AAA';
+    let b = 'BBB';
+    let c = a;
+    a = b;
+    b = c;
+    console.log('a = ' + a);
+    console.log('b = ' + b);
+
+    function findMax (...array) {
+            let max = Math.max(...array);
+            alert('max is ' + max);
+        }
+    findMax(...numbers);
+
+</script>
+</body>
+</html>
